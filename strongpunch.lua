@@ -1,3 +1,5 @@
+--Script for Strongest Punch Simulator / https://www.roblox.com/games/6875469709/X5-STRONGEST-PUNCH-SIMULATOR 
+
 if not game:IsLoaded() then
    game.Loaded:Wait()
 end
