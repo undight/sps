@@ -6,7 +6,7 @@ end
 
 if game.PlaceId == 6875469709 then
    local player = game:GetService("Players").LocalPlayer
-   player.CharacterAdded:wait()
+   player.CharacterAdded:Wait()
    local desc = game:GetService("Workspace").Map.Stages.Boosts[tostring(player.leaderstats.WORLD.Value)]:GetDescendants()
    local num = #desc
 
@@ -30,5 +30,12 @@ if game.PlaceId == 6875469709 then
    while task.wait() do
       game:GetService("ReplicatedStorage").RemoteEvent:FireServer({"WarpPlrToOtherMap", "Next"})
       game:GetService("Players").LocalPlayer.PlayerGui.ScreenGui["Noti_Frame"].Visible = false
+      game:GetService("ReplicatedStorage").RemoteEvent:FireServer("UpgradeCurrentPet")
+      game:GetService("Players").LocalPlayer.PlayerGui.ScreenGui["PetLevelUpEffect_Img"].Visible = false
+      game:GetService("Players").LocalPlayer.PlayerGui.ScreenGui["PetEvolveEffect_Img"].Visible = false
    end
+end
+
+for _,v in pairs(getconnections(game:GetService("Players").LocalPlayer.Idled)) do
+   v:Disable()
 end
