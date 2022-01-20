@@ -30,9 +30,7 @@ if game.PlaceId == 6875469709 then
    while task.wait() do
       game:GetService("ReplicatedStorage").RemoteEvent:FireServer({"WarpPlrToOtherMap", "Next"})
       game:GetService("Players").LocalPlayer.PlayerGui.ScreenGui["Noti_Frame"].Visible = false
-      game:GetService("ReplicatedStorage").RemoteEvent:FireServer("UpgradeCurrentPet")
-      game:GetService("Players").LocalPlayer.PlayerGui.ScreenGui["PetLevelUpEffect_Img"].Visible = false
-      game:GetService("Players").LocalPlayer.PlayerGui.ScreenGui["PetEvolveEffect_Img"].Visible = false
+      game:GetService("ReplicatedStorage").RemoteEvent:FireServer({"UpgradeCurrentPet"})
    end
 end
 
